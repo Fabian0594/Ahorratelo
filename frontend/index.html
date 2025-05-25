@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AhorrateLo - Comparador de Precios Inteligente Colombia 🇨🇴</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Banner -->
+    <div class="bg-green-600 text-white py-2">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center text-sm">
+                <span>🎉 ¡Ahorra hasta 50% comparando precios en todas las tiendas de Colombia!</span>
+                <div class="hidden md:flex items-center space-x-4">
+                    <span>🇨🇴 Colombia</span>
+                    <span>📞 Soporte 24/7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shopping-cart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">AhorrateLo</h1>
+                        <p class="text-xs text-gray-500">Comparador Inteligente</p>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-1 max-w-2xl mx-8">
+                    <div class="relative w-full">
+                        <input 
+                            type="text" 
+                            placeholder="Busca productos en todas las tiendas de Colombia..."
+                            class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        >
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-green-600">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- AI Assistant -->
+                    <button class="hidden md:flex items-center space-x-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition">
+                        <i data-lucide="brain" class="w-4 h-4"></i>
+                        <span class="text-sm font-medium">IA Asistente</span>
+                    </button>
+                    
+                    <!-- Favorites -->
+                    <button class="relative p-2 text-gray-600 hover:text-red-500 transition">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </button>
+                    
+                    <!-- Shopping Lists -->
+                    <button class="relative p-2 text-gray-600 hover:text-green-500 transition">
+                        <i data-lucide="list-checks" class="w-6 h-6"></i>
+                        <span class="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">2</span>
+                    </button>
+                    
+                    <!-- User Menu -->
+                    <button class="p-2 text-gray-600 hover:text-blue-500 transition">
+                        <i data-lucide="user" class="w-6 h-6"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu -->
+                    <button class="lg:hidden p-2 text-gray-600">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-8 py-3">
+                <div class="flex items-center space-x-2 text-green-600 font-medium">
+                    <i data-lucide="grid-3x3" class="w-4 h-4"></i>
+                    <span>Categorías</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6 text-gray-600">
+                    <a href="#" class="hover:text-green-600 transition">Supermercados</a>
+                    <a href="#" class="hover:text-green-600 transition">Tecnología</a>
+                    <a href="#" class="hover:text-green-600 transition">Hogar</a>
+                    <a href="#" class="hover:text-green-600 transition">Ofertas</a>
+                    <a href="#" class="hover:text-green-600 transition">Recetario IA</a>
+                    <a href="#" class="hover:text-green-600 transition">Listas Inteligentes</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg hero-pattern">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-5xl font-bold mb-6">
+                    Compara Precios en <span class="text-yellow-300">Todas las Tiendas</span> de Colombia
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Encuentra los mejores precios, crea listas de compras inteligentes con IA y ahorra dinero en cada compra
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center justify-center space-x-2">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                        <span>Comparar Precios Ahora</span>
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-800 transition flex items-center justify-center space-x-2">
+                        <i data-lucide="brain" class="w-5 h-5"></i>
+                        <span>Crear Lista con IA</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">¿Por qué elegir AhorrateLo?</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">La plataforma más completa para ahorrar dinero en tus compras diarias</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg border hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="trending-down" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Comparación en Tiempo Real</h4>
+                    <p class="text-gray-600">Precios actualizados de Éxito, Jumbo, Carulla, Olímpica, Falabella y MercadoLibre</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg border hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="brain" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">IA Inteligente</h4>
+                    <p class="text-gray-600">Crea listas de compras optimizadas y planes de comida según tu presupuesto</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg border hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="piggy-bank" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Máximo Ahorro</h4>
+                    <p class="text-gray-600">Ahorra hasta 30% en tus compras mensuales con nuestras recomendaciones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Categorías Populares</h3>
+                <p class="text-gray-600">Encuentra los mejores precios en las categorías más buscadas</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="apple" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h5 class="font-medium text-gray-800">Frutas y Verduras</h5>
+                    <p class="text-sm text-gray-500 mt-1">1,234 productos</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="milk" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h5 class="font-medium text-gray-800">Lácteos</h5>
+                    <p class="text-sm text-gray-500 mt-1">567 productos</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="beef" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <h5 class="font-medium text-gray-800">Carnes</h5>
+                    <p class="text-sm text-gray-500 mt-1">345 productos</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="wheat" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h5 class="font-medium text-gray-800">Panadería</h5>
+                    <p class="text-sm text-gray-500 mt-1">789 productos</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h5 class="font-medium text-gray-800">Tecnología</h5>
+                    <p class="text-sm text-gray-500 mt-1">2,456 productos</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition cursor-pointer">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="home" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h5 class="font-medium text-gray-800">Hogar</h5>
+                    <p class="text-sm text-gray-500 mt-1">1,678 productos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stores -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Tiendas Integradas</h3>
+                <p class="text-gray-600">Comparamos precios en las principales tiendas de Colombia</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="text-center p-4 border rounded-lg hover:shadow-lg transition">
+                    <div class="h-16 flex items-center justify-center mb-2">
+                        <span class="text-2xl font-bold text-red-600">ÉXITO</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Supermercados</p>
+                </div>
+                
+                <div class="text-center p-4 border rounded-lg hover:shadow-lg transition">
+                    <div class="h-16 flex items-center justify-center mb-2">
+                        <span class="text-2xl font-bold text-orange-600">JUMBO</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Hipermercados</p>
+                </div>
+                
+                <div class="text-center p-4 border rounded-lg hover:shadow-lg transition">
+                    <div class="h-16 flex items-center justify-center mb-2">
+                        <span class="text-2xl font-bold text-green-600">CARULLA</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Premium</p>
+                </div>
+                
+                <div class="text-center p-4 border rounded-lg hover:shadow-lg transition">
+                    <div class="h-16 flex items-center justify-center mb-2">
+                        <span class="text-2xl font-bold text-blue-600">OLÍMPICA</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Nacional</p>
+                </div>
+                
+                <div class="text-center p-4 border rounded-lg hover:shadow-lg transition">
+                    <div class="h-16 flex items-center justify-center mb-2">
+                        <span class="text-2xl font-bold text-purple-600">FALABELLA</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Departamental</p>
+                </div>
+                
+                <div class="text-center p-4 border rounded-lg hover:shadow-lg transition">
+                    <div class="h-16 flex items-center justify-center mb-2">
+                        <span class="text-2xl font-bold text-yellow-600">ML</span>
+                    </div>
+                    <p class="text-sm text-gray-600">MercadoLibre</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-4">¿Listo para empezar a ahorrar?</h3>
+            <p class="text-xl mb-8 opacity-90">Únete a miles de colombianos que ya ahorran con AhorrateLo</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Crear Cuenta Gratis
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-800 transition">
+                    Ver Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                            <i data-lucide="shopping-cart" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">AhorrateLo</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">El comparador de precios más completo de Colombia. Ahorra dinero en cada compra.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">Productos</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Comparador de Precios</a></li>
+                        <li><a href="#" class="hover:text-white transition">IA Asistente</a></li>
+                        <li><a href="#" class="hover:text-white transition">Listas Inteligentes</a></li>
+                        <li><a href="#" class="hover:text-white transition">Recetario IA</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">Tiendas</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Éxito</a></li>
+                        <li><a href="#" class="hover:text-white transition">Jumbo</a></li>
+                        <li><a href="#" class="hover:text-white transition">Carulla</a></li>
+                        <li><a href="#" class="hover:text-white transition">Todas las tiendas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">Soporte</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Centro de Ayuda</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white transition">API</a></li>
+                        <li><a href="#" class="hover:text-white transition">Términos</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AhorrateLo. Todos los derechos reservados. Hecho con ❤️ en Colombia 🇨🇴</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Simple search functionality
+        document.querySelector('input[type="text"]').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                alert('Búsqueda: ' + this.value + '\n¡Próximamente implementaremos la búsqueda real!');
+            }
+        });
+    </script>
+</body>
+</html> 
